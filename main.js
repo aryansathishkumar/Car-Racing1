@@ -8,12 +8,17 @@ var car1_x = 10
 var car1_y = 10
 
 var car2_x = 10
-var car2_y = 140
+var car2_y =100
 
 var height_car_1 = 65
 var height_car_2 = 65
 
-var background_img = "Racetrack.jpg"
+name_of_img_array = ["Racetrack.jpg", "race1.jpg", "race2.jpg", "race3.jpg"];
+
+var random_123 = Math.floor(Math.random() * 4);
+
+var background_img = name_of_img_array[random_123];
+
 var car_img_1 = "images.jpg"
 var car_img_2 = "images1.jpg"
 
@@ -96,8 +101,8 @@ function keydown(e)
 }
 function up()
 {
-  if(car1_y <= 0){
-    car1_x;car1_y - 10;
+  if(car1_y >= 0){
+    car1_y = car1_y - 10;
     console.log("car 1 moves")
     show_background();
     show_car1();
@@ -106,8 +111,8 @@ function up()
 }
 function a()
 {
-  if(car2_y <= 0){
-    car2_x;car2_y - 10;
+  if(car2_y >= 0){
+    car2_y = car2_y - 10;
     console.log("car 2 moves")
     show_background();
     show_car1();
@@ -117,7 +122,7 @@ function a()
 function down()
 {
   if(car1_y <= 500){
-    car1_x;car1_y + 10;
+    car1_y= car1_y + 10;
     console.log("car 1 moves")
     show_background();
     show_car1();
@@ -127,7 +132,7 @@ function down()
 function f()
 {
   if(car2_y <= 500){
-    car2_x;car2_y + 10;
+    car2_y = car2_y+10;
     console.log("car 2 moves")
     show_background();
     show_car1();
@@ -136,8 +141,8 @@ function f()
 }
 function right()
 {
-  if(car1_x <= 0){
-    car1_x - 10;car1_y;
+  if(car1_x <= 700){
+    car1_x = car1_x +10;
     console.log("car 1 moves")
     show_background();
     show_car1();
@@ -146,8 +151,8 @@ function right()
 }
 function d()
 {
-  if(car2_x <= 0){
-    car2_x - 10;car2_y;
+  if(car2_x <= 700){
+    car2_x = car2_x + 10;
     console.log("car 2 moves")
     show_background();
     show_car1();
@@ -156,9 +161,9 @@ function d()
 }
 function left()
 {
-  if(car1_x <= 500)
+  if(car1_x >= 0)
   {
-    car1_x + 10;car1_y;
+    car1_x = car1_x - 10;
     console.log("car 1 moves")
     show_background();
     show_car1();
@@ -167,8 +172,8 @@ function left()
 }
 function s()
 {
-  if(car1_x <= 500){
-    car2_x + 10;car2_y;
+  if(car2_x >= 0){
+    car2_x-=10;
     console.log("car 2 moves")
     show_background();
     show_car1();
